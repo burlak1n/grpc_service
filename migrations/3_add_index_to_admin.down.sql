@@ -1,0 +1,1 @@
+DELETE INDEX IF NOT EXISTS index_is_admin on users (is_admin);

@@ -1,0 +1,16 @@
+version: "0.1"
+
+services:
+  pg:
+    image: postgres:latest
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    env_file:
+      .env
+    hostname: postgresql
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  pg_data:

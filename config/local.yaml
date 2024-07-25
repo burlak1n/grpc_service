@@ -1,0 +1,6 @@
+env: "local" # dev, prod
+storage_path: "postgres://postgres:postgres@localhost:5432/db?sslmode=disable"
+token_ttl: 1h
+grpc:
+  port: 44044
+  timeout: 10h

@@ -1,0 +1,6 @@
+env: "prod" # dev, prod
+storage_path: "../db/"
+token_ttl: 1h
+grpc:
+  port: 44044
+  timeout: 5s

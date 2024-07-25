@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "burlak1n.sso.v1;ssov1";
+
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+
+
+message RegisterRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RegisterResponse {
+    uint32 user_id = 1; // UserID of registered user
+}
+
+
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+    uint32 app_id = 3; // ID of the App to login to
+}
+
+message LoginResponse {
+    string token = 1; // Auth login of the logged in user
+}
+
+
+
+message IsAdminRequest {
+    uint32 user_id = 1; // UserID to validate
+}
+
+message IsAdminResponse {
+    bool is_admin = 1; 
+}
